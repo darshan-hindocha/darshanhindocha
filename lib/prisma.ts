@@ -7,7 +7,7 @@ import { PrismaClient } from '@prisma/client';
 // https://pris.ly/d/help/next-js-best-practices
 
 let prisma: PrismaClient;
-console.log("ENV: ", process.env.NODE_ENV)
+
 if (process.env.NODE_ENV === 'production') {
   prisma = new PrismaClient();
 } else {
