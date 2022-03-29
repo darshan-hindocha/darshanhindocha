@@ -21,7 +21,6 @@ export default async function handler(
         }
       });
 
-      console.log("posted")
 
       return res.status(200).json({
         total: newOrUpdatedViews.count.toString()
@@ -34,7 +33,6 @@ export default async function handler(
           slug
         }
       });
-       console.log("got views: ", views)
 
       return res.status(200).json({ total: views.count.toString() });
     }
