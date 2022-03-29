@@ -3,6 +3,7 @@ import { parseISO, format } from 'date-fns';
 
 import Container from 'components/Container';
 import type { PropsWithChildren } from 'react';
+import ViewCounter from 'components/ViewCounter';
 import type { Blog } from 'contentlayer/generated';
 
 
@@ -38,6 +39,8 @@ export default function BlogLayout({
           </div>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
             {post.readingTime.text}
+            {` • `}
+            <ViewCounter slug={post.slug} />
           </p>
         </div>
         <div className="w-full mt-4 prose dark:prose-dark max-w-none">
