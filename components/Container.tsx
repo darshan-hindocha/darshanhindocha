@@ -11,7 +11,7 @@ export default function Container(props) {
   };
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-900">
+    <div className="bg-gray-50 dark:bg-gray-900 mt-20">
       <Head>
         <title>{meta.title}</title>
         <meta content={meta.description} name="description" />
