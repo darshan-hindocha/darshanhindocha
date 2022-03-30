@@ -35,8 +35,8 @@ export default function Container(props) {
 
     const {children, ...customMeta} = props;
     const meta = {
-        title: 'Darshan Hindocha - Undecided',
-        description: `?, ?, and ?.`,
+        title: 'Darshan Hindocha',
+        description: `Programmer, Mathematician, and sometimes-Painter.`,
         type: 'website',
         ...customMeta
     };
