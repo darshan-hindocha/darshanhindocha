@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Container from "../components/Container";
 
-export default function Art() {
+export default function Blog() {
     return (
         <Container
-            title={`Art – Darshan Hindocha`}
-            description={"Art Page by Darshan Hindocha"}
+            title={`Blog – Darshan Hindocha`}
+            description={"Blog by Darshan Hindocha"}
         >
             <Head>
                 <title>Building</title>
