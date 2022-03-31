@@ -24,6 +24,11 @@ export default function Blog({
                     All Posts
                 </h3>
                 <BlogPost
+                    title="The 4 Basic Steps in Creating a Memory"
+                    summary="Wait, I need to pay attention to remember things?!"
+                    slug="memory"
+                />
+                <BlogPost
                     title="Test Post!"
                     summary="This is a test post! Does it work?!?"
                     slug="test"
