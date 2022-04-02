@@ -9,6 +9,7 @@ module.exports = {
         'blue-opaque': 'rgb(13 42 148 / 18%)',
         gray: {
           0: '#e5c9a3',
+          50: '#e5c9a3',
           100: '#ddb887',
           200: '#dfa86b',
           300: '#cd974f',
