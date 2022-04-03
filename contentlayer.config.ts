@@ -17,16 +17,6 @@ const computedFields: ComputedFields = {
     type: 'number',
     resolve: (doc) => doc.body.raw.split(/\s+/gu).length
   },
-  tweetIds: {
-    type: 'json',
-    resolve: (doc) => {
-      const tweetMatches = doc.body.raw.match(
-        /<StaticTweet\sid="[0-9]+"\s\/>/g
-      );
-      const tweetIDs = tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]);
-      return tweetIDs ?? [];
-    }
-  },
   slug: {
     type: 'string',
     resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
@@ -46,10 +36,24 @@ const Blog = defineDocumentType(() => ({
   computedFields
 }));
 
+const BookNotes = defineDocumentType(() => ({
+  name: 'BookNotes',
+  filePathPattern: 'booknotes/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    publishedAt: { type: 'string', required: true },
+    summary: { type: 'string', required: true },
+    image: { type: 'string', required: true },
+    recommendation: { type: 'number', required: true}
+  },
+  computedFields
+}));
+
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog],
+  documentTypes: [Blog, BookNotes],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
