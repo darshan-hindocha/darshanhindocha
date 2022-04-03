@@ -37,8 +37,9 @@ export default function Container(props) {
     const {children, ...customMeta} = props;
     const meta = {
         title: 'Darshan Hindocha',
-        description: `Programmer, (ex?)-Mathematician, (wannabe) Writer and (sometimes) Painter.`,
+        description: `Programmer, (ex?)-Mathematician, (wannabe)-Writer and (sometimes)-Painter.`,
         type: 'website',
+        image: 'https://darshanhindocha.vercel.app/static/images/banner.png',
         ...customMeta
     };
 
