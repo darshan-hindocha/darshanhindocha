@@ -24,6 +24,11 @@ export default function Blog({
                     All Posts
                 </h3>
                 <BlogPost
+                    title="A Recall Process for Audiobooks"
+                    summary="Creating memorable journeys through audiobooks"
+                    slug="recalling-information-from-books"
+                />
+                <BlogPost
                     title="The 4 Basic Steps in Creating a Memory"
                     summary="Wait, I need to pay attention to remember things?!"
                     slug="memory"
