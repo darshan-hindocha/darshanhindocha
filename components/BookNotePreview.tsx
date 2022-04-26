@@ -16,7 +16,7 @@ export default function BookNotePreview({
   return (
     <Link href={`/book-notes/${slug}`}>
       <a className="w-full">
-        <div className="w-full mb-8">
+        <div className="w-full mb-8 p-6 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-800">
           <div className="flex flex-col justify-between md:flex-row">
             <h4 className="w-full mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100">
               {title}
