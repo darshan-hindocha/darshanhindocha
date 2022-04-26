@@ -25,6 +25,12 @@ const rows = [
     createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
     createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
     createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
+    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
+    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
+    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
+    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
+    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
+
 ];
 
 
@@ -35,25 +41,43 @@ export default function BookNotes() {
             description="Book Notes and Summaries"
         >
             <div className="flex flex-col items-left justify-around w-full max-w-2xl mx-auto mb-16">
-                <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+                <h1 className="mb-2 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
                     Book Notes
                 </h1>
+
+                 <p className="mb-4 mt-4 text-l tracking-tight text-gray-800 md:text-xl dark:text-gray-200">
+                    Books are great. No?
+                </p>
                 <BookNotePreview
                     title="Test Book Notes"
                     summary="Just checking to see if this thing works..."
                     slug="test-book-note"
                 />
+
+                <p className="mb-4 text-l tracking-tight text-gray-800 md:text-xl dark:text-gray-200">
+                    I like to keep track of the books I read so that I don&apos;t lose the ideas that have blown my mind in the past.
+                </p>
                 <TableContainer
                     component={Paper}
-                    className="bg-gray-200 text-2xl font-bold dark:bg-gray-400 text-black dark:text-white">
+                    className="bg-gray-200 text-2xl font-bold dark:bg-gray-800 text-black dark:text-white">
                     <Table sx={{minWidth: 600}} aria-label="simple table">
                         <TableHead>
-                            <TableRow>
-                                <TableCell>Stage</TableCell>
-                                <TableCell align="right">Title</TableCell>
-                                <TableCell align="right">Author</TableCell>
-                                <TableCell align="right">Retailer</TableCell>
-                                <TableCell align="right">Discussion</TableCell>
+                            <TableRow className="bg-gray-400 dark:bg-gray-800">
+                                <TableCell
+                                    className="w-full mb-2 text-xs font-medium text-gray-900 md:text-base dark:text-gray-100"
+                                >Date Read</TableCell>
+                                <TableCell
+                                    className="w-full mb-2 text-xs font-medium text-gray-900 md:text-base dark:text-gray-100"
+                                >Title</TableCell>
+                                <TableCell
+                                    className="w-full mb-2 text-xs font-medium text-gray-900 md:text-base dark:text-gray-100"
+                                >Author</TableCell>
+                                <TableCell
+                                    className="w-full mb-2 text-xs font-medium text-gray-900 md:text-base dark:text-gray-100"
+                                >Retailer</TableCell>
+                                <TableCell
+                                    className="w-full mb-2 text-xs font-medium text-gray-900 md:text-base dark:text-gray-100"
+                                >Discussion</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -61,14 +85,40 @@ export default function BookNotes() {
                                 <TableRow
                                     key={row.title}
                                     sx={{'&:last-child td, &:last-child th': {border: 0}}}
+                                    className="bg-gray-200 dark:bg-gray-700"
                                 >
-                                    <TableCell component="th" scope="row">
+                                    <TableCell component="th" scope="row"
+                                               className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                    >
                                         {row.dateRead}
                                     </TableCell>
-                                    <TableCell align="right">{row.title}</TableCell>
-                                    <TableCell align="right">{row.author}</TableCell>
-                                    <TableCell align="right">{row.retailer}</TableCell>
-                                    <TableCell align="right">{row.slug}</TableCell>
+                                    <TableCell
+                                               className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                    >{row.title}</TableCell>
+                                    <TableCell
+                                               className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                    >{row.author}</TableCell>
+                                    <TableCell align="right"
+                                               className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                    >
+                                        <a
+                                            href={row.linkToBuy}
+                                            style={{textDecorationLine: "underline"}}
+                                        >
+                                            {row.retailer}
+                                        </a>
+                                    </TableCell>
+                                    <TableCell align="right"
+                                               className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                    >
+                                        <a
+                                            href={`/book-notes/`+row.slug}
+                                            style={{textDecorationLine: "underline"}}
+                                            >
+                                            Book Notes
+                                        </a>
+
+                                    </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
