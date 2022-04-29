@@ -10,8 +10,8 @@ Plan:
 - [notion](https://playful-leopard-61b.notion.site/Task-Board-d520e35c496c4f4caa6a26f6b3d66dc0)
 
 ## Working Memory
-Obsidian ! 😍 
-https://plausible.io/
+- Obsidian ! 😍 
+- https://plausible.io/
 
 
 ### Credit
