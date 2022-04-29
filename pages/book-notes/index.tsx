@@ -7,6 +7,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Container from "components/Container";
 import BookNotePreview from 'components/BookNotePreview';
+import {booksRead} from "../../data/booksReadData";
 
 function createData(
     dateRead: string,
@@ -19,19 +20,8 @@ function createData(
     return {dateRead, title, author, linkToBuy, retailer, slug};
 }
 
-const rows = [
-    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
-    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
-    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
-    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
-    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
-    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
-    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
-    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
-    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
-    createData('Pre-2022', 'Outliers', 'Malcom Gladwell', 'https://www.amazon.co.uk/Outliers-Story-Success-Malcolm-Gladwell/dp/0141036257/ref=asc_df_0141036257/?tag=googshopuk-21&linkCode=df0&hvadid=310834580283&hvpos=&hvnetw=g&hvrand=278425882389793040&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007210&hvtargid=pla-466623711983&psc=1&th=1&psc=1', 'Amazon', 'outliers'),
+const rows = booksRead.map(book => createData(book.dateRead, book.title, book.author, book.linkToBuy, book.retailer, book.slug))
 
-];
 
 
 export default function BookNotes() {
@@ -45,7 +35,7 @@ export default function BookNotes() {
                     Book Notes
                 </h1>
 
-                 <p className="mb-4 mt-4 text-l tracking-tight text-gray-800 md:text-xl dark:text-gray-200">
+                <p className="mb-4 mt-4 text-l tracking-tight text-gray-800 md:text-xl dark:text-gray-200">
                     Books are great. No?
                 </p>
                 <BookNotePreview
@@ -55,7 +45,8 @@ export default function BookNotes() {
                 />
 
                 <p className="mb-4 text-l tracking-tight text-gray-800 md:text-xl dark:text-gray-200">
-                    I like to keep track of the books I read so that I don&apos;t lose the ideas that have blown my mind in the past.
+                    I like to keep track of the books I read. So that I can stay in touch with the ideas that have blown my mind
+                    in the past.
                 </p>
                 <TableContainer
                     component={Paper}
@@ -93,10 +84,10 @@ export default function BookNotes() {
                                         {row.dateRead}
                                     </TableCell>
                                     <TableCell
-                                               className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                        className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
                                     >{row.title}</TableCell>
                                     <TableCell
-                                               className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                        className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
                                     >{row.author}</TableCell>
                                     <TableCell align="right"
                                                className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
@@ -111,12 +102,18 @@ export default function BookNotes() {
                                     <TableCell align="right"
                                                className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
                                     >
-                                        <a
-                                            href={`/book-notes/`+row.slug}
-                                            style={{textDecorationLine: "underline"}}
+                                        {row.slug.length > 0 &&
+                                            <a
+                                                href={`/book-notes/` + row.slug}
+                                                style={{textDecorationLine: "underline"}}
                                             >
-                                            Book Notes
-                                        </a>
+                                                Book Notes
+                                            </a>
+
+                                        }
+                                        {row.slug.length === 0 &&
+                                            <p>Notes in progress</p>
+                                        }
 
                                     </TableCell>
                                 </TableRow>
