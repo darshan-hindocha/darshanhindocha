@@ -12,6 +12,7 @@ Plan:
 ## Working Memory
 - Obsidian ! 😍 
 - https://plausible.io/
+- Graph CMS Integration for Art...
 
 
 ### Credit
