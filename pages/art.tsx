@@ -1,17 +1,48 @@
-import Head from "next/head";
 import Container from "../components/Container";
+import Image from "next/image";
+import {gql} from 'graphql-request';
+import {graphcms} from "../data/graphCMS";
 
-export default function Art() {
+export default function Art({product}) {
     return (
         <Container
             title={`Art – Darshan Hindocha`}
             description={"Art Page by Darshan Hindocha"}
         >
-            <div className="flex flex-col items-left justify-around w-full max-w-2xl mx-auto mb-16">
-                <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
-                    Under Construction
-                </h1>
+            <div className="grid grid-cols-2 grid-rows-2 gap-4">
+                <div className="bg-gray-200 m-5">
+                    {product.name}
+                    {product.description}
+                </div>
             </div>
+
         </Container>
+
     )
+}
+
+
+export async function getStaticProps({test}) {
+    const {product} = await graphcms.request(
+        `
+    query TestProduct {
+      product( where: { id: "cl34rmdmszgts0bmgeuyey9qj"}) {
+        name
+        description
+        price
+        images {
+            url
+            height
+            width
+        }
+      }
+    }
+  `
+    );
+    console.log(product)
+    return {
+        props: {
+            product,
+        },
+    };
 }
