@@ -18,5 +18,11 @@ module.exports = withContentlayer()({
     }
 
     return config;
-  }
+  },
+  images: {
+    domains: [
+        'media.graphassets.com',
+        'media.graphcms.com',
+    ],
+  },
 });
