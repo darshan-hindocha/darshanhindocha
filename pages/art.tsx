@@ -9,20 +9,31 @@ export default function Art({products}) {
 
         return allProducts.map(product => {
             return (
-                <div className="bg-gray-200 m-5">
-                    <h1>{product.name}</h1>
+                <div key={product.id} className="bg-gray-200 md:m-20 rounded-xl flex-col dark:bg-gray-800">
+                    <h1 className="mb-2 mt-8 text-xl text-center tracking-tight text-gray-800 md:text-3xl dark:text-gray-200">
+                        {product.name}
+                    </h1>
 
-                    <div className="m-8">
+                    <p className="text-xs mx-4 tracking-tight text-center text-gray-800 md:text-l dark:text-gray-200">
+                        {product.description}
+                    </p>
+                    <div className="mx-14 mb-4 mt-4">
                         {product.images[0] &&
                             <Image
                                 alt={product.name}
                                 width={product.images[0]?.width}
                                 height={product.images[0]?.height}
                                 src={product.images[0]?.url}
+                                className="rounded-xl"
                             />
                         }
+                        {(product.datePainted) &&
+                            <p className="text-xs mx-1 justify-self-end tracking-tight text-left text-gray-800 md:text-l dark:text-gray-200">
+                                Created: {product.datePainted}
+                            </p>
+                        }
                     </div>
-                    <p>{product.description}</p>
+
                 </div>
             )
         })
@@ -34,7 +45,7 @@ export default function Art({products}) {
             title={`Art – Darshan Hindocha`}
             description={"Art Page by Darshan Hindocha"}
         >
-            <div className="grid grid-cols-2 grid-rows-2 gap-4">
+            <div className="grid gap-4 md:grid-cols-2 ">
                 {displayProducts(products)}
             </div>
 
@@ -45,12 +56,15 @@ export default function Art({products}) {
 
 
 export async function getStaticProps({test}) {
+    console.log("queried")
     const {products} = await graphcms.request(
         `query getProducts {
-                      products {
+                      products(orderBy: displayOrdering_ASC) {
+                        id
                         name
                         description
                         price
+                        datePainted
                         images {
                           url
                           height
