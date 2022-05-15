@@ -6,12 +6,8 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        // Simple 3 row grid
-        '2': 'repeat(2, minmax(300px, 1fr))'
-      },
-      gridTemplateRows: {
-        // Simple 3 row grid
-        '2': 'repeat(2, minmax(500px, 1fr))'
+        // Simple 2 column grid
+        '2': 'repeat(2, minmax(100px, 1fr))'
       },
       colors: {
         'blue-opaque': 'rgb(13 42 148 / 18%)',
