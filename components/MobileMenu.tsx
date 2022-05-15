@@ -54,7 +54,7 @@ export default function MobileMenu() {
                         style={{transitionDelay: '150ms'}}
                     >
                         <Link href="/">
-                            <a className="flex w-auto pb-4">Home</a>
+                            <a className="flex ml-4 w-auto pb-4">Home</a>
                         </Link>
                     </li>
                     <li
@@ -62,7 +62,7 @@ export default function MobileMenu() {
                         style={{transitionDelay: '175ms'}}
                     >
                         <Link href="/blog">
-                            <a className="flex w-auto pb-4">Blog</a>
+                            <a className="flex ml-4 w-auto pb-4">Blog</a>
                         </Link>
                     </li>
                     <li
@@ -70,7 +70,7 @@ export default function MobileMenu() {
                         style={{transitionDelay: '250ms'}}
                     >
                         <Link href="/book-notes">
-                            <a className="flex w-auto pb-4">Book Notes</a>
+                            <a className="flex ml-4 w-auto pb-4">Book Notes</a>
                         </Link>
                     </li>
                     <li
@@ -78,7 +78,7 @@ export default function MobileMenu() {
                         style={{transitionDelay: '275ms'}}
                     >
                         <Link href="/art">
-                            <a className="flex w-auto pb-4">Art</a>
+                            <a className="flex ml-4 w-auto pb-4">Art</a>
                         </Link>
                     </li>
                     <li
@@ -86,7 +86,7 @@ export default function MobileMenu() {
                         style={{transitionDelay: '200ms'}}
                     >
                         <Link href="/about">
-                            <a className="flex w-auto pb-4">About</a>
+                            <a className="flex ml-4 w-auto pb-4">About</a>
                         </Link>
                     </li>
                 </ul>
