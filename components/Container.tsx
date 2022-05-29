@@ -57,7 +57,7 @@ export default function Container(props) {
             </Head>
 
             <nav
-                className="flex justify-between w-full relative border-gray-700 pt-8 pb-8 sm:pb-8 bg-gray-700 bg-opacity-60 text-gray-100"
+                className="flex justify-between w-full relative border-gray-700 pt-2 pb-2 sm:pb-2 bg-gray-700 bg-opacity-60 text-gray-100"
             >
                 <div className="m-4">
                     <MobileMenu/>
