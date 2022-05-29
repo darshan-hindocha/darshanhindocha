@@ -21,9 +21,8 @@
 }
 
 .menu {
-  padding: 0 28px 0 4px;
   margin: 0;
-  padding-top: 24px;
+  padding: 24px 28px 0 4px;
   width: 100%;
   height: 100vh;
   z-index: 1000;
@@ -46,7 +45,7 @@
 }
 
 .menuRendered li {
-  @apply border-gray-200 dark:border-gray-600 w-full;
+  @apply border-gray-600 w-full;
   transform: translateX(0);
   opacity: 1;
 }
