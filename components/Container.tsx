@@ -15,9 +15,9 @@ function NavItem({href, text}) {
             <a
                 className={cn(
                     isActive
-                        ? 'font-semibold text-gray-800 dark:text-gray-200'
-                        : 'font-normal text-gray-600 dark:text-gray-400',
-                    'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all'
+                        ? 'font-semibold text-gray-200'
+                        : 'font-normal text-gray-400',
+                    'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-800 transition-all'
                 )}
             >
                 <span className="capsize">{text}</span>
@@ -42,7 +42,7 @@ export default function Container(props) {
     };
 
     return (
-        <div className="bg-gray-50 dark:bg-gray-900">
+        <div className="bg-gray-900">
             <Head>
                 <title>{meta.title}</title>
                 <meta name="robots" content="follow, index"/>
@@ -60,7 +60,7 @@ export default function Container(props) {
             </Head>
 
             <nav
-                className="flex justify-between w-full relative border-gray-200 bg-gray-100 dark:border-gray-700 pt-8 pb-8 sm:pb-8  text-gray-900 bg-gray-50  dark:bg-gray-700 bg-opacity-60 dark:text-gray-100"
+                className="flex justify-between w-full relative border-gray-700 pt-8 pb-8 sm:pb-8 bg-gray-700 bg-opacity-60 text-gray-100"
             >
                 <div className="m-4">
                     <MobileMenu/>
@@ -72,7 +72,7 @@ export default function Container(props) {
                 </div>
             </nav>
             <main
-                className="flex flex-col mt-20 justify-center px-8 bg-gray-50 dark:bg-gray-900"
+                className="flex flex-col mt-20 justify-center px-8 bg-gray-900"
             >
                 {children}
             </main>

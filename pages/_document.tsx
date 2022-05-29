@@ -39,7 +39,7 @@ export default function Document(props) {
         <meta content="#ffffff" name="msapplication-TileColor" />
         <meta content="14d2e73487fa6c71" name="yandex-verification" />
       </Head>
-      <body className="bg-white dark:bg-black text-white dark:text-black">
+      <body className="bg-black text-black">
         <Main />
         <NextScript />
       </body>

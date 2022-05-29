@@ -31,11 +31,11 @@ export default function BookNotes() {
             description="Book Notes and Summaries"
         >
             <div className="flex flex-col items-left justify-around w-full max-w-2xl mx-auto mb-16">
-                <h1 className="mb-2 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+                <h1 className="mb-2 text-3xl font-bold tracking-tight md:text-5xl text-white">
                     Book Notes
                 </h1>
 
-                <p className="mb-4 mt-4 text-l tracking-tight text-gray-800 md:text-xl dark:text-gray-200">
+                <p className="mb-4 mt-4 text-l tracking-tight md:text-xl text-gray-200">
                     Books are great. No?
                 </p>
                 <BookNotePreview
@@ -44,30 +44,30 @@ export default function BookNotes() {
                     slug="test-book-note"
                 />
 
-                <p className="mb-4 text-l tracking-tight text-gray-800 md:text-xl dark:text-gray-200">
+                <p className="mb-4 text-l tracking-tight md:text-xl text-gray-200">
                     I like to keep track of the books I read. So that I can stay in touch with the ideas that have blown my mind
                     in the past.
                 </p>
                 <TableContainer
                     component={Paper}
-                    className="bg-gray-200 text-2xl font-bold dark:bg-gray-800 text-black dark:text-white">
+                    className="text-2xl font-bold bg-gray-800 text-white">
                     <Table sx={{minWidth: 600}} aria-label="simple table">
                         <TableHead>
-                            <TableRow className="bg-gray-400 dark:bg-gray-800">
+                            <TableRow className="bg-gray-800">
                                 <TableCell
-                                    className="w-full mb-2 text-xs font-medium text-gray-900 md:text-base dark:text-gray-100"
+                                    className="w-full mb-2 text-xs font-medium md:text-base text-gray-100"
                                 >Date Read</TableCell>
                                 <TableCell
-                                    className="w-full mb-2 text-xs font-medium text-gray-900 md:text-base dark:text-gray-100"
+                                    className="w-full mb-2 text-xs font-medium md:text-base text-gray-100"
                                 >Title</TableCell>
                                 <TableCell
-                                    className="w-full mb-2 text-xs font-medium text-gray-900 md:text-base dark:text-gray-100"
+                                    className="w-full mb-2 text-xs font-medium md:text-base text-gray-100"
                                 >Author</TableCell>
                                 <TableCell
-                                    className="w-full mb-2 text-xs font-medium text-gray-900 md:text-base dark:text-gray-100"
+                                    className="w-full mb-2 text-xs font-medium md:text-base text-gray-100"
                                 >Retailer</TableCell>
                                 <TableCell
-                                    className="w-full mb-2 text-xs font-medium text-gray-900 md:text-base dark:text-gray-100"
+                                    className="w-full mb-2 text-xs font-medium md:text-base text-gray-100"
                                 >Discussion</TableCell>
                             </TableRow>
                         </TableHead>
@@ -76,21 +76,21 @@ export default function BookNotes() {
                                 <TableRow
                                     key={row.title}
                                     sx={{'&:last-child td, &:last-child th': {border: 0}}}
-                                    className="bg-gray-200 dark:bg-gray-700"
+                                    className="bg-gray-700"
                                 >
                                     <TableCell component="th" scope="row"
-                                               className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                               className="w-full mb-2 text-xs font-medium md:text-sm text-gray-100"
                                     >
                                         {row.dateRead}
                                     </TableCell>
                                     <TableCell
-                                        className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                        className="w-full mb-2 text-xs font-medium md:text-sm text-gray-100"
                                     >{row.title}</TableCell>
                                     <TableCell
-                                        className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                        className="w-full mb-2 text-xs font-medium md:text-sm text-gray-100"
                                     >{row.author}</TableCell>
                                     <TableCell align="right"
-                                               className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                               className="w-full mb-2 text-xs font-medium md:text-sm text-gray-100"
                                     >
                                         <a
                                             href={row.linkToBuy}
@@ -100,7 +100,7 @@ export default function BookNotes() {
                                         </a>
                                     </TableCell>
                                     <TableCell align="right"
-                                               className="w-full mb-2 text-xs font-medium text-gray-900 md:text-sm dark:text-gray-100"
+                                               className="w-full mb-2 text-xs font-medium md:text-sm text-gray-100"
                                     >
                                         {row.slug.length > 0 &&
                                             <a
