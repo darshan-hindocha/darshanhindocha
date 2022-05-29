@@ -29,12 +29,12 @@ export default function BookNotesLayout({children, post}: PropsWithChildren<{ po
                             src="/avatar.jpeg"
                             className="rounded-full"
                         />
-                        <p className="ml-2 text-sm text-gray-300">
+                        <p className="ml-2 text-sm text-gray-200">
                             {'Darshan Hindocha / '}
                             {format(parseISO(post.publishedAt), 'MMMM dd, yyyy')}
                         </p>
                     </div>
-                    <p className="mt-2 text-sm text-gray-400 min-w-32 md:mt-0">
+                    <p className="mt-2 text-sm text-gray-100 min-w-32 md:mt-0">
                         {post.readingTime.text}
                         {` • `}
                         <ViewCounter slug={post.slug}/>
@@ -42,7 +42,7 @@ export default function BookNotesLayout({children, post}: PropsWithChildren<{ po
                         How strongly I recommend it: {post.recommendation}/10
                     </p>
                 </div>
-                <div className="w-full mt-4 prose max-w-none">
+                <div className="w-full mt-4 prose text-gray-50 max-w-none">
                     {children}
                 </div>
             </article>

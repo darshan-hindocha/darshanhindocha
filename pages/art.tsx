@@ -10,11 +10,11 @@ export default function Art({products}) {
         return allProducts.map(product => {
             return (
                 <div key={product.id} className="md:m-20 rounded-xl flex-col bg-gray-800">
-                    <h1 className="mb-2 mt-8 text-xl text-center tracking-tight md:text-3xl text-gray-200">
+                    <h1 className="mb-2 mt-8 text-xl text-center tracking-tight md:text-3xl text-gray-50">
                         {product.name}
                     </h1>
 
-                    <p className="text-xs mx-4 tracking-tight text-center md:text-l text-gray-200">
+                    <p className="text-xs mx-4 tracking-tight text-center md:text-l text-gray-100">
                         {product.description}
                     </p>
                     <div className="mx-14 mb-4 mt-4">

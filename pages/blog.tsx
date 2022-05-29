@@ -17,7 +17,7 @@ export default function Blog({
                 <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl text-white">
                     Blog
                 </h1>
-                <p className="mb-4 text-gray-400">
+                <p className="mb-4 text-gray-100">
                     {`I've written ${posts.length} articles on my blog...`}
                 </p>
                 <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight md:text-4xl text-white">
