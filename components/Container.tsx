@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import NextLink from 'next/link';
 import {useRouter} from "next/router";
-import {useState, useEffect} from 'react';
 import cn from 'classnames';
 import MobileMenu from "./MobileMenu";
 
@@ -15,9 +14,9 @@ function NavItem({href, text}) {
             <a
                 className={cn(
                     isActive
-                        ? 'font-semibold text-gray-200'
-                        : 'font-normal text-gray-400',
-                    'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-800 transition-all'
+                        ? 'font-semibold text-gray-50'
+                        : 'font-normal text-gray-100',
+                    'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-600 transition-all'
                 )}
             >
                 <span className="capsize">{text}</span>
@@ -27,10 +26,8 @@ function NavItem({href, text}) {
 }
 
 export default function Container(props) {
-    const [mounted, setMounted] = useState(false);
     const router = useRouter();
 
-    useEffect(() => setMounted(true), []);
 
     const {children, ...customMeta} = props;
     const meta = {
