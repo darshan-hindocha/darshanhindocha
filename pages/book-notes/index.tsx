@@ -50,7 +50,7 @@ export default function BookNotes() {
                 </p>
                 <TableContainer
                     component={Paper}
-                    className="text-2xl font-bold bg-gray-800 text-white">
+                    className="text-2xl font-bold bg-gray-400 text-white">
                     <Table sx={{minWidth: 600}} aria-label="simple table">
                         <TableHead>
                             <TableRow className="bg-gray-800">

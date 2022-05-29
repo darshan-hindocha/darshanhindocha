@@ -40,7 +40,7 @@ export default function BlogLayout({children, post}: PropsWithChildren<{ post: B
                         <ViewCounter slug={post.slug}/>
                     </p>
                 </div>
-                <div className="w-full mt-4 prose-dark max-w-none">
+                <div className="w-full mt-4 prose max-w-none">
                     {children}
                 </div>
             </article>
