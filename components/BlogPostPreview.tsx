@@ -21,11 +21,11 @@ export default function BlogPostPreview({
             <h4 className="w-full mb-2 text-lg font-medium md:text-xl text-gray-100">
               {title}
             </h4>
-            <p className="w-32 mb-4 text-left text-gray-500 md:text-right md:mb-0">
+            <p className="w-32 mb-4 text-left text-gray-300 md:text-right md:mb-0">
               {`${views ? new Number(views).toLocaleString() : '–––'} views`}
             </p>
           </div>
-          <p className="text-gray-400">{summary}</p>
+          <p className="text-gray-300">{summary}</p>
         </div>
       </a>
     </Link>

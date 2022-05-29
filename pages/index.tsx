@@ -18,11 +18,11 @@ const Home: NextPage = () => {
                         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-white">
                             Darshan Hindocha
                         </h1>
-                        <h2 className="text-gray-200 mb-4">
+                        <h2 className="text-gray-300 mb-4">
                             Software Engineer at{' '}
                             <span className="font-semibold">AMEX</span>
                         </h2>
-                        <p className="text-gray-400 mb-16">
+                        <p className="text-gray-100 mb-16">
                             Interested in Data Science and Software Engineering
                         </p>
                     </div>
@@ -52,24 +52,6 @@ const Home: NextPage = () => {
                         slug="test-book-note"
                     />
 
-                </div>
-                <div>
-                    <p className="ml-2 text-m text-gray-300 mt-10">
-                        Currently (as of 30/03/2022), the blog page and blogs are ready. I&apos;ve been looking forward
-                        to
-                        having this space for a while. I tried medium, but it didn&apos;t hit the spot.
-                    </p>
-                    <p className="ml-2 text-m text-gray-300 mt-10">
-                        The direction and topics of the blog are loose for now. My general hope is to increase writing
-                        proficiency, and deepen an understanding of the concepts I write about.
-                    </p>
-                    <p className="ml-2 text-m text-gray-300 mt-10">
-                        More importantly, writing is a strong motivator to be more thoughtful.
-                    </p>
-
-                    <p className="ml-2 text-m text-gray-300 mt-10">
-                        Book notes and art gallery -- soon to come
-                    </p>
                 </div>
 
             </div>

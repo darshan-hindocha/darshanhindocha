@@ -35,7 +35,7 @@ export default function BookNotes() {
                     Book Notes
                 </h1>
 
-                <p className="mb-4 mt-4 text-l tracking-tight md:text-xl text-gray-200">
+                <p className="mb-4 mt-4 text-l tracking-tight md:text-xl text-gray-100">
                     Books are great. No?
                 </p>
                 <BookNotePreview
@@ -44,16 +44,16 @@ export default function BookNotes() {
                     slug="test-book-note"
                 />
 
-                <p className="mb-4 text-l tracking-tight md:text-xl text-gray-200">
+                <p className="mb-4 text-l tracking-tight md:text-xl text-gray-100">
                     I like to keep track of the books I read. So that I can stay in touch with the ideas that have blown my mind
                     in the past.
                 </p>
                 <TableContainer
                     component={Paper}
-                    className="text-2xl font-bold bg-gray-400 text-white">
+                    className="text-2xl font-bold">
                     <Table sx={{minWidth: 600}} aria-label="simple table">
                         <TableHead>
-                            <TableRow className="bg-gray-800">
+                            <TableRow className="bg-gray-700">
                                 <TableCell
                                     className="w-full mb-2 text-xs font-medium md:text-base text-gray-100"
                                 >Date Read</TableCell>
@@ -76,7 +76,7 @@ export default function BookNotes() {
                                 <TableRow
                                     key={row.title}
                                     sx={{'&:last-child td, &:last-child th': {border: 0}}}
-                                    className="bg-gray-700"
+                                    className="bg-gray-600"
                                 >
                                     <TableCell component="th" scope="row"
                                                className="w-full mb-2 text-xs font-medium md:text-sm text-gray-100"

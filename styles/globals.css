@@ -29,7 +29,7 @@ html {
 }
 
 #__next {
-  @apply bg-gray-900;
+  @apply bg-gray-900 text-gray-100;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -64,7 +64,7 @@ html {
 }
 
 .prose .anchor {
-  @apply absolute invisible no-underline;
+  @apply absolute invisible no-underline text-gray-100;
 
   margin-left: -1em;
   padding-right: 0.5em;
@@ -77,12 +77,24 @@ html {
   @apply visible;
 }
 
+.prose h1 {
+  @apply text-gray-50;
+}
+
+.prose h2 {
+  @apply text-gray-200;
+}
+
+.prose h3 {
+  @apply text-gray-200;
+}
+
 .prose a {
-  @apply transition-all;
+  @apply transition-all text-gray-100;
 }
 
 .prose .anchor:after {
-  @apply text-gray-700;
+  @apply text-gray-100;
   content: '#';
 }
 
@@ -118,11 +130,11 @@ html {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  @apply text-gray-300;
+  @apply text-gray-50;
 }
 
 .token.punctuation {
-  @apply text-gray-300;
+  @apply text-gray-50;
 }
 
 .token.property,
@@ -184,7 +196,7 @@ pre {
 }
 
 .rehype-code-title {
-  @apply px-5 py-3 font-mono text-sm font-bold text-gray-800 bg-gray-200 border border-b-0 rounded-t-lg text-gray-200 border-gray-700 bg-gray-800;
+  @apply px-5 py-3 font-mono text-sm font-bold text-gray-800 bg-gray-200 border border-b-0 rounded-t-lg text-gray-100 border-gray-700 bg-gray-800;
 }
 
 .rehype-code-title + pre {
