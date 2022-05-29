@@ -42,7 +42,7 @@ export default function BookNotesLayout({children, post}: PropsWithChildren<{ po
                         How strongly I recommend it: {post.recommendation}/10
                     </p>
                 </div>
-                <div className="w-full mt-4 prose-dark max-w-none">
+                <div className="w-full mt-4 prose max-w-none">
                     {children}
                 </div>
             </article>
