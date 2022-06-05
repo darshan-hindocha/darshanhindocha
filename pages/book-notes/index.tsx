@@ -52,22 +52,22 @@ export default function BookNotes() {
                     component={Paper}
                     className="text-2xl font-bold rounded-lg text-white">
                     <Table sx={{minWidth: 600}} aria-label="simple table">
-                        <TableHead>
-                            <TableRow className="bg-gray-700">
+                        <TableHead className="bg-gray-700">
+                            <TableRow>
                                 <TableCell
-                                    className="w-full mb-2 text-xs font-medium text-gray-50 md:text-base"
-                                >Date Read</TableCell>
+                                    className="w-full mb-2 text-xs font-medium md:text-base"
+                                >Read Around</TableCell>
                                 <TableCell
-                                    className="w-full mb-2 text-xs font-medium text-gray-50 md:text-base"
+                                    className="w-full mb-2 text-xs font-medium md:text-base"
                                 >Title</TableCell>
                                 <TableCell
-                                    className="w-full mb-2 text-xs font-medium text-gray-50 md:text-base"
+                                    className="w-full mb-2 text-xs font-medium md:text-base"
                                 >Author</TableCell>
                                 <TableCell
-                                    className="w-full mb-2 text-xs font-medium text-gray-50 md:text-base"
+                                    className="w-full mb-2 text-xs font-medium md:text-base"
                                 >Retailer</TableCell>
                                 <TableCell
-                                    className="w-full mb-2 text-xs font-medium text-gray-50 md:text-base"
+                                    className="w-full mb-2 text-xs font-medium md:text-base"
                                 >Discussion</TableCell>
                             </TableRow>
                         </TableHead>
@@ -79,18 +79,18 @@ export default function BookNotes() {
                                     className="bg-gray-600"
                                 >
                                     <TableCell component="th" scope="row"
-                                               className="w-full mb-2 text-xs font-medium text-gray-100 md:text-sm"
+                                               className="w-full mb-2 text-xs font-medium md:text-sm"
                                     >
                                         {row.dateRead}
                                     </TableCell>
                                     <TableCell
-                                        className="w-full mb-2 text-xs font-medium text-gray-100 md:text-sm"
+                                        className="w-full mb-2 text-xs font-medium md:text-sm"
                                     >{row.title}</TableCell>
                                     <TableCell
-                                        className="w-full mb-2 text-xs font-medium text-gray-100 md:text-sm"
+                                        className="w-full mb-2 text-xs font-medium md:text-sm"
                                     >{row.author}</TableCell>
-                                    <TableCell align="right"
-                                               className="w-full mb-2 text-xs font-medium text-gray-100 md:text-sm"
+                                    <TableCell
+                                               className="w-full mb-2 text-xs font-medium md:text-sm"
                                     >
                                         <a
                                             href={row.linkToBuy}
@@ -99,8 +99,8 @@ export default function BookNotes() {
                                             {row.retailer}
                                         </a>
                                     </TableCell>
-                                    <TableCell align="right"
-                                               className="w-full mb-2 text-xs font-medium text-gray-100 md:text-sm"
+                                    <TableCell
+                                               className="w-full mb-2 text-xs font-medium md:text-sm"
                                     >
                                         {row.slug.length > 0 &&
                                             <a
@@ -112,7 +112,7 @@ export default function BookNotes() {
 
                                         }
                                         {row.slug.length === 0 &&
-                                            <p>Notes in progress</p>
+                                            <p>-</p>
                                         }
 
                                     </TableCell>
