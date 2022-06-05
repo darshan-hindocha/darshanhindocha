@@ -11,7 +11,7 @@ module.exports = {
             },
             colors: {
                 'blue-opaque': 'rgb(13 42 148 / 18%)',
-                gray: {
+                old: {
                     0: '#BABBBD',
                     50: '#C8D1D9',
                     100: '#BABBBD',
@@ -23,6 +23,23 @@ module.exports = {
                     700: '#161B22',
                     800: '#0D1116',
                     900: '#020408'
+                },
+                gray: {
+                    50: '#f0f6fc',
+                    100: '#C2C8CF',
+                    200: '#9BA2AA',
+                    300: '#7D7D7F',
+                    400: '#30363d',
+                    500: '#30363D',
+                    600: '#30363D',
+                    700: '#151a22',
+                    800: '#0d1116',
+                    900: '#01040a',
+                },
+                green: {
+                    light: '#f78166',
+                    mid: '#238636',
+                    dark: '#242710',
                 }
             },
             fontFamily: {
@@ -71,5 +88,6 @@ module.exports = {
             },
         }
     },
-    plugins: [require('@tailwindcss/typography')]
+    plugins: [require('@tailwindcss/typography')],
+    important: '#__next',
 };
