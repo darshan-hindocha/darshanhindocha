@@ -57,7 +57,7 @@ export default function Container(props) {
             </Head>
 
             <nav
-                className="flex justify-between w-full relative border-gray-700 pt-2 pb-2 sm:pb-2 bg-gray-700 bg-opacity-60 text-gray-100"
+                className="flex justify-between fixed z-10 w-full border-gray-700 pt-2 pb-2 sm:pb-2 bg-gray-700 bg-opacity-60 text-gray-100"
             >
                 <div className="m-4">
                     <MobileMenu/>
@@ -69,7 +69,7 @@ export default function Container(props) {
                 </div>
             </nav>
             <main
-                className="flex flex-col mt-20 justify-center px-8 bg-gray-900"
+                className="flex flex-col mt-40 justify-center px-8 bg-gray-900"
             >
                 {children}
             </main>
