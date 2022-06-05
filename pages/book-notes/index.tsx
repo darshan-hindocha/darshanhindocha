@@ -1,30 +1,10 @@
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@mui/material';
 import Container from "components/Container";
 import BookNotePreview from 'components/BookNotePreview';
-import {booksRead} from "../../data/booksReadData";
+import {graphcms} from "../../data/graphCMS";
 
-function createData(
-    dateRead: string,
-    title: string,
-    author: string,
-    linkToBuy: string,
-    retailer: string,
-    slug: string
-) {
-    return {dateRead, title, author, linkToBuy, retailer, slug};
-}
+export default function BookNotes({bookNotesLists}) {
 
-const rows = booksRead.map(book => createData(book.dateRead, book.title, book.author, book.linkToBuy, book.retailer, book.slug))
-
-
-
-export default function BookNotes() {
     return (
         <Container
             title="Book Notes – Darshan Hindocha"
@@ -45,7 +25,8 @@ export default function BookNotes() {
                 />
 
                 <p className="mb-4 text-l tracking-tight md:text-xl text-gray-100">
-                    I like to keep track of the books I read. So that I can stay in touch with the ideas that have blown my mind
+                    I like to keep track of the books I read. So that I can stay in touch with the ideas that have blown
+                    my mind
                     in the past.
                 </p>
                 <TableContainer
@@ -72,46 +53,46 @@ export default function BookNotes() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {rows.map((row) => (
+                            {bookNotesLists?.map((row) => (
                                 <TableRow
-                                    key={row.title}
+                                    key={row?.title}
                                     sx={{'&:last-child td, &:last-child th': {border: 0}}}
                                     className="bg-gray-600"
                                 >
                                     <TableCell component="th" scope="row"
                                                className="w-full mb-2 text-xs font-medium md:text-sm"
                                     >
-                                        {row.dateRead}
+                                        {row?.dateRead}
                                     </TableCell>
                                     <TableCell
                                         className="w-full mb-2 text-xs font-medium md:text-sm"
-                                    >{row.title}</TableCell>
+                                    >{row?.title}</TableCell>
                                     <TableCell
                                         className="w-full mb-2 text-xs font-medium md:text-sm"
-                                    >{row.author}</TableCell>
+                                    >{row?.author}</TableCell>
                                     <TableCell
-                                               className="w-full mb-2 text-xs font-medium md:text-sm"
+                                        className="w-full mb-2 text-xs font-medium md:text-sm"
                                     >
                                         <a
-                                            href={row.linkToBuy}
+                                            href={row?.linkToBuy}
                                             style={{textDecorationLine: "underline"}}
                                         >
-                                            {row.retailer}
+                                            {row?.retailer}
                                         </a>
                                     </TableCell>
                                     <TableCell
-                                               className="w-full mb-2 text-xs font-medium md:text-sm"
+                                        className="w-full mb-2 text-xs font-medium md:text-sm"
                                     >
-                                        {row.slug.length > 0 &&
+                                        {row?.slug &&
                                             <a
-                                                href={`/book-notes/` + row.slug}
+                                                href={`/book-notes/` + row?.slug}
                                                 style={{textDecorationLine: "underline"}}
                                             >
                                                 Book Notes
                                             </a>
 
                                         }
-                                        {row.slug.length === 0 &&
+                                        {!row?.slug &&
                                             <p>-</p>
                                         }
 
@@ -121,8 +102,29 @@ export default function BookNotes() {
                         </TableBody>
                     </Table>
                 </TableContainer>
-
             </div>
         </Container>
     )
+}
+
+
+export async function getStaticProps() {
+    const {bookNotesLists} = await graphcms.request(
+        `query getBooksReadList {
+                      bookNotesLists {
+                        author
+                        dateRead
+                        id
+                        linkToBuy
+                        retailer
+                        slug
+                        title
+                      }
+                    }`
+    );
+    return {
+        props: {
+            bookNotesLists,
+        },
+    };
 }
