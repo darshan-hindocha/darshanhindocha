@@ -38,6 +38,7 @@ export default function Document(props) {
         <meta content="#ffffff" name="theme-color" />
         <meta content="#ffffff" name="msapplication-TileColor" />
         <meta content="14d2e73487fa6c71" name="yandex-verification" />
+        <script defer data-domain="darshan-hindocha.com" src="https://plausible.io/js/plausible.js"/>
       </Head>
       <body className="bg-black text-black">
         <Main />
