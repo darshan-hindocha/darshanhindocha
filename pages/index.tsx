@@ -42,6 +42,11 @@ const Home: NextPage = () => {
                         Recent Activity
                     </h1>
                     <BlogPost
+                        title="My Favourite Lessons from Poker"
+                        summary="There is a lot to learn about decision-making from Poker"
+                        slug="poker-lessons"
+                    />
+                    <BlogPost
                         title="A Recall Process for Audiobooks"
                         summary="Creating memorable journeys through audiobooks"
                         slug="recalling-information-from-books"
