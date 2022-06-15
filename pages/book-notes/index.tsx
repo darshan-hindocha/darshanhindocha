@@ -22,6 +22,8 @@ export default function BookNotes({bookNotesLists}) {
                     title="Test Book Notes"
                     summary="Just checking to see if this thing works..."
                     slug="test-book-note"
+                    publishedAt="2022-04-01"
+                    recommendation= {9}
                 />
 
                 <p className="mb-4 text-l tracking-tight md:text-xl text-gray-100">
