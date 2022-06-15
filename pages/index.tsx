@@ -1,10 +1,12 @@
-import type {NextPage} from 'next'
 import Container from "../components/Container";
 import Image from "next/image";
 import BlogPost from "../components/BlogPostPreview";
 import BookNotePreview from "../components/BookNotePreview";
+import {allBlogs, allBookNotes} from "contentlayer/generated";
+import {pick} from "../lib/utils";
+import {InferGetStaticPropsType} from "next";
 
-const Home: NextPage = () => {
+export default function Home({posts, bookNotes}: InferGetStaticPropsType<typeof getStaticProps>) {
 
     return (
         <Container
@@ -39,24 +41,25 @@ const Home: NextPage = () => {
 
                 <div>
                     <h1 className="font-bold text-1xl md:text-2xl tracking-tight mb-4 text-white">
-                        Recent Activity
+                        Recent Articles
                     </h1>
-                    <BlogPost
-                        title="My Favourite Lessons from Poker"
-                        summary="There is a lot to learn about decision-making from Poker"
-                        slug="poker-lessons"
-                    />
-                    <BlogPost
-                        title="A Recall Process for Audiobooks"
-                        summary="Creating memorable journeys through audiobooks"
-                        slug="recalling-information-from-books"
-                    />
-                    <BookNotePreview
-                        title="Test Book Notes"
-                        summary="Just checking to see if this thing works..."
-                        slug="test-book-note"
-                    />
-
+                    {posts.map(({publishedAt, title, slug, summary}, index) => {
+                        return (
+                            <BlogPost key={index} title={title} summary={summary} slug={slug}
+                                      publishedAt={publishedAt}/>
+                        )
+                    })}
+                </div>
+                <div>
+                    <h1 className="font-bold text-1xl md:text-2xl tracking-tight mb-4 text-white">
+                        Recent Book Notes
+                    </h1>
+                    {bookNotes.map(({publishedAt, title, slug, summary, recommendation}, index) => {
+                        return (
+                            <BookNotePreview key={index} title={title} summary={summary} slug={slug}
+                                             publishedAt={publishedAt} recommendation={recommendation}/>
+                        )
+                    })}
                 </div>
 
             </div>
@@ -65,4 +68,34 @@ const Home: NextPage = () => {
     )
 }
 
-export default Home
+
+export function getStaticProps() {
+    const posts: {
+        slug: string,
+        title: string,
+        summary: string,
+        publishedAt: string,
+    }[] = allBlogs
+        .map((post) => pick(post, ['slug', 'title', 'summary', 'publishedAt']))
+        .sort(
+            (a, b) =>
+                Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+        )
+        .slice(0, 3);
+
+    const bookNotes: {
+        slug: string,
+        title: string,
+        summary: string,
+        publishedAt: string,
+        recommendation: number
+    }[] = allBookNotes
+        .map((bookNote) => pick(bookNote, ['slug', 'title', 'publishedAt', 'summary', 'recommendation']))
+        .sort(
+            (a, b) =>
+                Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+        )
+        .slice(0, 2);
+
+    return {props: {posts, bookNotes}};
+}
