@@ -23,38 +23,28 @@ export default function Blog({
                 <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight md:text-4xl text-white">
                     All Posts
                 </h3>
-                <BlogPost
-                    title="My Favourite Lessons from Poker"
-                    summary="There is a lot to learn about decision-making from Poker"
-                    slug="poker-lessons"
-                />
-                <BlogPost
-                    title="A Recall Process for Audiobooks"
-                    summary="Creating memorable journeys through audiobooks"
-                    slug="recalling-information-from-books"
-                />
-                <BlogPost
-                    title="The 4 Basic Steps in Creating a Memory"
-                    summary="Wait, I need to pay attention to remember things?!"
-                    slug="memory"
-                />
-                <BlogPost
-                    title="Test Post!"
-                    summary="This is a test post! Does it work?!?"
-                    slug="test"
-                />
+                {posts.map(({publishedAt, title, slug, summary}, index) => {
+                    return (
+                        <BlogPost key={index} title={title} summary={summary} slug={slug}
+                                  publishedAt={publishedAt}/>
+                    )
+                })}
             </div>
         </Container>
     )
 }
 
 export function getStaticProps() {
-    const posts = allBlogs
+    const posts: {
+        slug: string,
+        title: string,
+        summary: string,
+        publishedAt: string,
+    }[] = allBlogs
         .map((post) => pick(post, ['slug', 'title', 'summary', 'publishedAt']))
         .sort(
             (a, b) =>
                 Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
         );
-
     return {props: {posts}};
 }
