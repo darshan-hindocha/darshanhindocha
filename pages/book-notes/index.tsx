@@ -26,84 +26,44 @@ export default function BookNotes({bookNotesLists}) {
                     recommendation={9}
                 />
 
-                <p className="mb-4 text-l tracking-tight md:text-xl text-gray-100">
+                <p className="mb-12 text-l tracking-tight md:text-xl text-gray-100">
                     I like to keep track of the books I read. So that I can stay in touch with the ideas that have blown
                     my mind
                     in the past.
                 </p>
-                <TableContainer
-                    component={Paper}
-                    className="text-2xl font-bold rounded-lg text-white">
-                    <Table sx={{minWidth: 600}} aria-label="simple table">
-                        <TableHead className="bg-gray-700">
-                            <TableRow>
-                                <TableCell
-                                    className="w-full mb-2 text-xs font-medium md:text-base"
-                                >Read Around</TableCell>
-                                <TableCell
-                                    className="w-full mb-2 text-xs font-medium md:text-base"
-                                >Title</TableCell>
-                                <TableCell
-                                    className="w-full mb-2 text-xs font-medium md:text-base"
-                                >Author</TableCell>
-                                <TableCell
-                                    className="w-full mb-2 text-xs font-medium md:text-base"
-                                >Retailer</TableCell>
-                                <TableCell
-                                    className="w-full mb-2 text-xs font-medium md:text-base"
-                                >Discussion</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {bookNotesLists?.map((row) => (
-                                <TableRow
-                                    key={row?.title}
-                                    sx={{'&:last-child td, &:last-child th': {border: 0}}}
-                                    className="bg-gray-600"
+
+                {bookNotesLists?.map((row) => {
+                    return (
+                        <div key={row?.title}>
+                            <h1 className="mb-1 text-xl tracking-tight md:text-2xl text-white">
+                                {row?.title}
+                            </h1>
+                            <h2 className="ml-8 mb-1 text-md font-light md:text-lg">
+                                {row?.author} {` • `}
+                                <a
+                                    href={row?.linkToBuy}
+                                    className="cursor-pointer underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
-                                    <TableCell component="th" scope="row"
-                                               className="w-full mb-2 text-xs font-medium md:text-sm"
+                                    <em>Buy from {row?.retailer}</em>
+                                </a>
+                            </h2>
+                            <h2 className="ml-8 mb-8 text-md font-light md:text-lg">
+                                Read Around: {row?.dateRead}{` • `} Book Notes:
+                                {row?.slug ? <a
+                                        href={`/book-notes/` + row?.slug}
+                                        className="underline cursor-pointer"
                                     >
-                                        {row?.dateRead}
-                                    </TableCell>
-                                    <TableCell
-                                        className="w-full mb-2 text-xs font-medium md:text-sm"
-                                    >{row?.title}</TableCell>
-                                    <TableCell
-                                        className="w-full mb-2 text-xs font-medium md:text-sm"
-                                    >{row?.author}</TableCell>
-                                    <TableCell
-                                        className="w-full mb-2 text-xs font-medium md:text-sm"
-                                    >
-                                        <a
-                                            href={row?.linkToBuy}
-                                            style={{textDecorationLine: "underline"}}
-                                        >
-                                            {row?.retailer}
-                                        </a>
-                                    </TableCell>
-                                    <TableCell
-                                        className="w-full mb-2 text-xs font-medium md:text-sm"
-                                    >
-                                        {row?.slug &&
-                                            <a
-                                                href={`/book-notes/` + row?.slug}
-                                                style={{textDecorationLine: "underline"}}
-                                            >
-                                                Book Notes
-                                            </a>
-
-                                        }
-                                        {!row?.slug &&
-                                            <p>-</p>
-                                        }
-
-                                    </TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
+                                        Available
+                                    </a>
+                                    :
+                                    ' -'
+                                }
+                            </h2>
+                        </div>
+                    )
+                })}
             </div>
         </Container>
     )
