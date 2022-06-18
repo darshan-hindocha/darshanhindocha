@@ -3,7 +3,7 @@ export default function BookList({row, authorFilter}) {
         return
     } else {
         return (
-            <div>
+            <div className="border border-gray-400 bg-gray-700 rounded-lg px-4 pt-4 mb-8">
                 <h1 className="mb-1 text-xl tracking-tight md:text-2xl text-white">
                     {row?.title}
                 </h1>
