@@ -23,7 +23,7 @@ export default function BookNotes({bookNotesLists}) {
                     summary="Just checking to see if this thing works..."
                     slug="test-book-note"
                     publishedAt="2022-04-01"
-                    recommendation= {9}
+                    recommendation={9}
                 />
 
                 <p className="mb-4 text-l tracking-tight md:text-xl text-gray-100">
@@ -113,7 +113,7 @@ export default function BookNotes({bookNotesLists}) {
 export async function getStaticProps() {
     const {bookNotesLists} = await graphcms.request(
         `query getBooksReadList {
-                      bookNotesLists {
+                      bookNotesLists(orderBy: dateReadDateType_DESC) {
                         author
                         dateRead
                         id
