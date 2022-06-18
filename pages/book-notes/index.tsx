@@ -1,10 +1,15 @@
-import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@mui/material';
 import Container from "components/Container";
 import BookNotePreview from 'components/BookNotePreview';
 import {graphcms} from "../../data/graphCMS";
+import {useState} from "react";
+import BookList from "../../components/BookList";
 
-export default function BookNotes({bookNotesLists}) {
+export default function BookNotes({bookNotesLists, authorsList}) {
+    const [authorFilter, setAuthorFilter] = useState('');
 
+    console.log(authorsList.map( ( auth ) => auth.author))
+    // @ts-ignore
+    const uniqueAuthorsList = [...new Set(authorsList.map( ( auth ) => auth.author))]
     return (
         <Container
             title="Book Notes – Darshan Hindocha"
@@ -26,43 +31,20 @@ export default function BookNotes({bookNotesLists}) {
                     recommendation={9}
                 />
 
-                <p className="mb-12 text-l tracking-tight md:text-xl text-gray-100">
+                <p className="mb-4 text-l tracking-tight md:text-xl text-gray-100">
                     I like to keep track of the books I read. So that I can stay in touch with the ideas that have blown
                     my mind
                     in the past.
                 </p>
-
+                <div className="flex flex-row w-full mb-4 ">
+                    <button onClick={() => setAuthorFilter('')}>All</button>
+                    {uniqueAuthorsList?.map((authName) => {
+                        return <button key={authName} onClick={() => setAuthorFilter(authName)}>{authName}</button>
+                    })
+                    }
+                </div>
                 {bookNotesLists?.map((row) => {
-                    return (
-                        <div key={row?.title}>
-                            <h1 className="mb-1 text-xl tracking-tight md:text-2xl text-white">
-                                {row?.title}
-                            </h1>
-                            <h2 className="ml-8 mb-1 text-md font-light md:text-lg">
-                                {row?.author} {` • `}
-                                <a
-                                    href={row?.linkToBuy}
-                                    className="cursor-pointer underline"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <em>Buy from {row?.retailer}</em>
-                                </a>
-                            </h2>
-                            <h2 className="ml-8 mb-8 text-md font-light md:text-lg">
-                                Read Around: {row?.dateRead}{` • `} Book Notes:
-                                {row?.slug ? <a
-                                        href={`/book-notes/` + row?.slug}
-                                        className="underline cursor-pointer"
-                                    >
-                                        Available
-                                    </a>
-                                    :
-                                    ' -'
-                                }
-                            </h2>
-                        </div>
-                    )
+                    return BookList({row, authorFilter})
                 })}
             </div>
         </Container>
@@ -71,6 +53,14 @@ export default function BookNotes({bookNotesLists}) {
 
 
 export async function getStaticProps() {
+    const data = await graphcms.request(
+        `query getAuthors {
+                        bookNotesLists {
+                            author
+                          }
+                    }`
+    )
+    const authorsList = data.bookNotesLists
     const {bookNotesLists} = await graphcms.request(
         `query getBooksReadList {
                       bookNotesLists(orderBy: dateReadDateType_DESC) {
@@ -87,6 +77,7 @@ export async function getStaticProps() {
     return {
         props: {
             bookNotesLists,
+            authorsList
         },
     };
 }
