@@ -6,10 +6,12 @@ import BookList from "../../components/BookList";
 
 export default function BookNotes({bookNotesLists, authorsList}) {
     const [authorFilter, setAuthorFilter] = useState('');
+    const selectedTagStyle = "border border-gray-50 bg-gray-50 text-gray-900 rounded-full mb-4 mx-1 py-1 px-3 whitespace-nowrap"
+    const unselectedTagStyle = "border border-gray-600 bg-gray-700 rounded-full mb-4 mx-1 py-1 px-3 whitespace-nowrap hover:bg-gray-600 hover:border-gray-300"
 
-    console.log(authorsList.map( ( auth ) => auth.author))
+    authorsList = authorsList.map((auth) => auth.author)
     // @ts-ignore
-    const uniqueAuthorsList = [...new Set(authorsList.map( ( auth ) => auth.author))]
+    const uniqueAuthorsList = [...new Set(authorsList)]
     return (
         <Container
             title="Book Notes – Darshan Hindocha"
@@ -36,10 +38,23 @@ export default function BookNotes({bookNotesLists, authorsList}) {
                     my mind
                     in the past.
                 </p>
-                <div className="flex flex-row w-full mb-4 ">
-                    <button onClick={() => setAuthorFilter('')}>All</button>
+                <div className="flex flex-row justify-start mb-2 gap-1 w-full overflow-x-auto">
+                    <button
+                        onClick={() => setAuthorFilter('')}
+                        className={(authorFilter==='') ? selectedTagStyle: unselectedTagStyle}
+                    >
+                        All
+                    </button>
                     {uniqueAuthorsList?.map((authName) => {
-                        return <button key={authName} onClick={() => setAuthorFilter(authName)}>{authName}</button>
+                        return (
+                            <button
+                                key={authName}
+                                onClick={() => setAuthorFilter(authName)}
+                                className={(authName===authorFilter) ? selectedTagStyle: unselectedTagStyle}
+                            >
+                                <p className="text-center">{authName}</p>
+                            </button>
+                        )
                     })
                     }
                 </div>
